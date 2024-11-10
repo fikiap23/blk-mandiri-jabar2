@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -88,7 +89,19 @@ class HomeController extends Controller
     $title = $artikel->judul;
     $active = 'home';
     $content = 'template/template';
+
+    // Load the specific artikel along with its kategori
     $artikel = $artikel->load('kategori');
-    return view('detailArtikel', compact('title', 'active', 'content', 'artikel'));
+
+    // Retrieve all categories
+    $allCategories = Kategori::all();
+
+    // Retrieve the five most recent articles (excluding the current one if needed)
+    $recentArticles = Artikel::where('id', '!=', $artikel->id) // Exclude the current article if desired
+      ->latest()
+      ->take(5)
+      ->get();
+
+    return view('detailArtikel', compact('title', 'active', 'content', 'artikel', 'allCategories', 'recentArticles'));
   }
 }

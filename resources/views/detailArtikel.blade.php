@@ -22,44 +22,20 @@
                 <div class="col-lg-8">
                     <article class="post">
                         <div class="post-image mb-5">
-                            <img loading="lazy" class="img-fluid w-100" src="images\blog\post-1.jpg" alt="post-image">
+                            <img loading="lazy" class="img-fluid w-100" src="{{ asset('storage/' . $artikel['gambar']) }}"
+                                alt="post-image">
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
-                            <h3>Cras Sed Elit Sit Amet.</h3>
+                            <h3>{{ $artikel['judul'] }}</h3>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a href="index.html">Admin</a>&nbsp;/
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="single-post.html">30 comments</a>&nbsp;/
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="single-post.html">30 likes</a>
+                                    <a href="#">Admin</a>&nbsp;/
+                                    {{ date('F d, Y', strtotime($artikel['created_at'])) }}
                                 </li>
                             </ul>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                                anim id est laborum.
-                                Sed ut perspiciatis unde omnis natus error sit voluptatem accusantium dolore mque laudantium
-                                totam rem aperiam
-                                eaque ipsa quae ab illo inventore veritatis et quasi archite beatae vitae dicta sunt
-                                explicabo. nemo enim ipsam
-                                voluptatem quia voluptassit.aspernatur aut odit aut fugit.</p>
-                            <p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque poro
-                                quisquam est, qui dolorem
-                                ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-                                tempora incidunt ut
-                                labore et dolore magnam aliquam quaerat voluptatem</p>
-                            <!-- blockquote -->
-                            <blockquote>Excepteur sint occaecat cupidatat non proi dent, sunt in culpa qui officia deserunt
-                                mollit anim iest.laborum.
-                                sed perspiciatis unde omnis iste natus error voluptatem accusantium dolore mque laudantium.
-                            </blockquote>
-                            <p>Occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                laborum. Seper spiciatis
-                                unde omnis natus error sit voluptatem accusantium doloremque laudantium totam rem. aperiam
-                                eaque ipsa quae
-                                ab illo inventore veritatis.</p>
+                            <p>{{ $artikel['excerpt'] }}</p>
+                            <div>{!! $artikel['body'] !!}</div>
                             <!-- post share -->
                             <ul class="post-content-share list-inline mb-5">
                                 <li class="list-inline-item">
@@ -84,7 +60,7 @@
                                 </li>
                             </ul>
 
-                            <h3>2 comments</h3>
+                            {{-- <h3>2 comments</h3>
                             <ul class="comment-list">
                                 <!-- comment list -->
                                 <li class="comment-list-item">
@@ -131,7 +107,7 @@
                                     </div>
                                 </div>
                                 <button type="submit" value="send" class="btn btn-primary">send Message</button>
-                            </form>
+                            </form> --}}
                         </div>
                     </article>
                 </div>
@@ -152,71 +128,37 @@
                             <h2>Categories</h2>
                             <!-- widget categories list -->
                             <ul class="widget-categories-list">
-                                <li>
-                                    <a href="blog.html">Financial Advise</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Businee Growth</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Investment Marketing</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Business Consulting</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Advanced Analytics</a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">Investment Marketing</a>
-                                </li>
+                                @foreach ($allCategories as $category)
+                                    <li>
+                                        <a href="{{ url('/category', $category->slug) }}">{{ $category->nama }}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
+
                         <div class="widget-post widget">
                             <h2>Latest Post</h2>
                             <!-- latest post -->
                             <ul class="widget-post-list">
-                                <li class="widget-post-list-item">
-                                    <div class="widget-post-image">
-                                        <a href="single-post.html">
-                                            <img loading="lazy" src="images\blog\post-1.jpg" alt="post-img">
-                                        </a>
-                                    </div>
-                                    <div class="widget-post-content">
-                                        <a href="single-post.html">
-                                            <h5>Condentum Quam Vitae Ligu. tempor bibendum.</h5>
-                                        </a>
-                                        <h6>Aug 20, 2018</h6>
-                                    </div>
-                                </li>
-                                <li class="widget-post-list-item">
-                                    <div class="widget-post-image">
-                                        <a href="single-post.html">
-                                            <img loading="lazy" src="images\blog\post-2.jpg" alt="post-img">
-                                        </a>
-                                    </div>
-                                    <div class="widget-post-content">
-                                        <a href="single-post.html">
-                                            <h5>Condentum Quam Vitae Ligu. tempor bibendum.</h5>
-                                        </a>
-                                        <h6>Aug 20, 2018</h6>
-                                    </div>
-                                </li>
-                                <li class="widget-post-list-item">
-                                    <div class="widget-post-image">
-                                        <a href="single-post.html">
-                                            <img loading="lazy" src="images\blog\post-3.jpg" alt="post-img">
-                                        </a>
-                                    </div>
-                                    <div class="widget-post-content">
-                                        <a href="single-post.html">
-                                            <h5>Condentum Quam Vitae Ligu. tempor bibendum.</h5>
-                                        </a>
-                                        <h6>Aug 20, 2018</h6>
-                                    </div>
-                                </li>
+                                @foreach ($recentArticles as $recent)
+                                    <li class="widget-post-list-item">
+                                        <div class="widget-post-image">
+                                            <a href="{{ url('/article', $recent->slug) }}">
+                                                <img loading="lazy" src="{{ asset('storage/' . $recent->gambar) }}"
+                                                    alt="post-img">
+                                            </a>
+                                        </div>
+                                        <div class="widget-post-content">
+                                            <a href="{{ url('/article', $recent->slug) }}">
+                                                <h5>{{ $recent->judul }}</h5>
+                                            </a>
+                                            <h6>{{ $recent->created_at->format('M d, Y') }}</h6>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
+
                     </aside>
                 </div>
             </div>
