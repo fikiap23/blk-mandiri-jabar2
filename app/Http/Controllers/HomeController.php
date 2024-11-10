@@ -82,4 +82,13 @@ class HomeController extends Controller
     $data['content'] = 'template/template';
     return view('alumni', $data);
   }
+
+  public function showArtikelDetail(Artikel $artikel)
+  {
+    $title = $artikel->judul;
+    $active = 'home';
+    $content = 'template/template';
+    $artikel = $artikel->load('kategori');
+    return view('detailArtikel', compact('title', 'active', 'content', 'artikel'));
+  }
 }

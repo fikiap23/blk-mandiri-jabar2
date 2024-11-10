@@ -39,17 +39,18 @@ FACEBOOK: https://www.facebook.com/themefisher
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 
     <!-- Themefisher Icon font -->
-    <link rel="stylesheet" href="{{ 'assets/' }}plugins\themefisher-font\style.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/themefisher-font/style.css') }}">
     <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="{{ 'assets/' }}plugins\bootstrap\bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/bootstrap.min.css') }}">
     <!-- Lightbox.min css -->
-    <link rel="stylesheet" href="{{ 'assets/' }}plugins\lightbox2\css\lightbox.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/lightbox2/css/lightbox.min.css') }}">
     <!-- animation css -->
-    <link rel="stylesheet" href="{{ 'assets/' }}plugins\animate\animate.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/animate/animate.css') }}">
     <!-- Slick Carousel -->
-    <link rel="stylesheet" href="{{ 'assets/' }}plugins\slick\slick.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/slick/slick.css') }}">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="{{ 'assets/' }}css\style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
 
 </head>
 
@@ -81,10 +82,10 @@ Fixed Navigation
             <nav class="navbar navbar-expand-lg navbar-light px-0">
                 <!-- logo -->
                 <a class="navbar-brand logo" href="{{ url('/') }}">
-                    <img loading="lazy" class="logo-default" src="{{ 'assets/' }}images/logo_blk.png" alt="logo"
-                        style="height:60px !important;">
-                    <img loading="lazy" class="logo-white" src="{{ 'assets/' }}images/logo_blk.png" alt="logo"
-                        style="height:60px !important;">
+                    <img loading="lazy" class="logo-default" src="{{ asset('assets/images/logo_blk.png') }}"
+                        alt="logo" style="height:60px !important;">
+                    <img loading="lazy" class="logo-white" src="{{ asset('assets/images/logo_blk.png') }}"
+                        alt="logo" style="height:60px !important;">
                 </a>
                 <!-- /logo -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -225,26 +226,27 @@ End Fixed Navigation
     Essential Scripts
     =====================================-->
     <!-- Main jQuery -->
-    <script src="{{ 'assets/' }}plugins\jquery\jquery.min.js"></script>
+    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 
     <!-- Bootstrap4 -->
-    <script src="{{ 'assets/' }}plugins\bootstrap\bootstrap.min.js"></script>
+    <script src="{{ asset('assets/plugins/bootstrap/bootstrap.min.js') }}"></script>
     <!-- Parallax -->
-    <script src="{{ 'assets/' }}plugins\parallax\jquery.parallax-1.1.3.js"></script>
+    <script src="{{ asset('assets/plugins/parallax/jquery.parallax-1.1.3.js') }}"></script>
     <!-- lightbox -->
-    <script src="{{ 'assets/' }}plugins\lightbox2\js\lightbox.min.js"></script>
+    <script src="{{ asset('assets/plugins/lightbox2/js/lightbox.min.js') }}"></script>
     <!-- Owl Carousel -->
-    <script src="{{ 'assets/' }}plugins\slick\slick.min.js"></script>
+    <script src="{{ asset('assets/plugins/slick/slick.min.js') }}"></script>
     <!-- filter -->
-    <script src="{{ 'assets/' }}plugins\filterizr\jquery.filterizr.min.js"></script>
+    <script src="{{ asset('assets/plugins/filterizr/jquery.filterizr.min.js') }}"></script>
     <!-- Smooth Scroll js -->
-    <script src="{{ 'assets/' }}plugins\smooth-scroll\smooth-scroll.min.js"></script>
+    <script src="{{ asset('assets/plugins/smooth-scroll/smooth-scroll.min.js') }}"></script>
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
-    <script src="{{ 'assets/' }}plugins\google-map\gmap.js"></script>
+    <script src="{{ asset('assets/plugins/google-map/gmap.js') }}"></script>
 
     <!-- Custom js -->
-    <script src="{{ 'assets/' }}js\script.js"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+
 
 
 

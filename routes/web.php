@@ -6,7 +6,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +45,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard/artikel/create/checkSlug', [ArtikelController::class, 'checkSlug']);
 });
+
+// artikel
+Route::get('/artikel/{artikel:slug}', [HomeController::class, 'showArtikelDetail']);
 
 // Route::get('/home', [HomeController::class, 'index']);
 Route::get('/profile', [HomeController::class, 'profile']);
